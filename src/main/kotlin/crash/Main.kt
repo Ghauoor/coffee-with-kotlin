@@ -37,15 +37,62 @@ fun main() {
 
     val nulls: Int? = null
 
-    val numberOne = readLine() ?: "0"
-    val numberTwo = readLine() ?: "0"
+//    val numberOne = readlnOrNull() ?: "0"
+//    val numberTwo = readlnOrNull() ?: "0"
 
     // Bad practice
     // val result = numberOne!!.toInt() + numberTwo!!.toInt()
 
     //Better way
-    val result = numberOne.toInt() + numberTwo.toInt()
-    print(result)
+//    val result = numberOne.toInt() + numberTwo.toInt()
+//    print(result)
 
+    // Lists
+    val shoppingList = listOf<String>("Rolex", "Lambo", "Jinnah House")
+    println(shoppingList[0])
+
+    // Mutable List
+    val shoppingMutableList = mutableListOf<String>("BMW", "Mehran", "v8")
+    shoppingMutableList.add("Ferrari")
+
+    println(shoppingMutableList[3])
+
+    // Loops
+    var counter = 0;
+    while (counter < shoppingList.size) {
+        println(shoppingList[counter])
+        counter++;
+    }
+
+    for (shoppingItem in shoppingMutableList) {
+        println(shoppingItem)
+    }
+
+    // Loop with range
+
+//    for (i in 1..100) {
+//        println(i)
+//    }
+
+    // When Expression
+    val a = 3
+    when (x) {
+        in 1..2 -> print("x is between one and two")
+        in 3..10 -> print("x is between three and ten")
+        else -> {
+            println("x is not in the range")
+        }
+    }
+
+    printNumber()
+}
+
+// Functions
+fun printNumber() {
+    for (i in 1..10)
+        println(i)
+}
+
+fun isEven (number : Int) {
 
 }
