@@ -84,12 +84,23 @@ fun main() {
         }
     }
 
-    printNumber()
-    val isEve = isEven()
-    val isOdd = 3
-    println(isOdd.isOdd())
-    println(isEve)
+//    printNumber()
+//    val isEve = isEven()
+//    val isOdd = 3
+//    println(isOdd.isOdd())
+//    println(isEve)
     println()
+
+//------------------------Exceptions--------------------------------------
+    val input = readLine() ?: "0"
+    val parseNumber = try {
+        input.toInt()
+    } catch (e: Exception) {
+        0
+    }
+
+    println(parseNumber)
+
 }
 
 // Functions
