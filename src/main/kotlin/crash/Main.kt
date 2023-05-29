@@ -92,14 +92,24 @@ fun main() {
     println()
 
 //------------------------Exceptions--------------------------------------
-    val input = readLine() ?: "0"
+    // val input = readLine() ?: "0"
     val parseNumber = try {
-        input.toInt()
+        //input.toInt()
     } catch (e: Exception) {
         0
     }
-
-    println(parseNumber)
+    println()
+//-----------------------Lambda Functions---------------------------------
+    val list = listOf("kotlin", "is", "fun")
+    val count = list.count { currentString ->
+        currentString.length == 3
+    }
+    println(count)
+    println()
+    val counterN = list.customCount { currentString ->
+        currentString.length <= 4
+    }
+    println(counterN)
 
 }
 
@@ -116,4 +126,14 @@ fun isEven(number: Int = 2): Boolean {
 // Extension  func
 fun Int.isOdd(): Boolean {
     return this % 2 == 1
+}
+
+fun List<String>.customCount(function: (String) -> Boolean): Int {
+    var counter = 0
+    for (string in this) {
+        if (function(string)) {
+            counter++;
+        }
+    }
+    return counter
 }
