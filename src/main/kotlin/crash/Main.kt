@@ -85,6 +85,11 @@ fun main() {
     }
 
     printNumber()
+    val isEve = isEven()
+    val isOdd = 3
+    println(isOdd.isOdd())
+    println(isEve)
+    println()
 }
 
 // Functions
@@ -93,6 +98,11 @@ fun printNumber() {
         println(i)
 }
 
-fun isEven (number : Int) {
+fun isEven(number: Int = 2): Boolean {
+    return number % 2 == 0
+}
 
+// Extension  func
+fun Int.isOdd(): Boolean {
+    return this % 2 == 1
 }
